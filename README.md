@@ -7,7 +7,7 @@ OK 、 老规矩直接上图，看着图来说话
 
 ![总览.gif](https://upload-images.jianshu.io/upload_images/1780580-dbdecb32420d93aa.gif?imageMogr2/auto-orient/strip)![中断请求.gif](https://upload-images.jianshu.io/upload_images/1780580-0510c815ee9029e1.gif?imageMogr2/auto-orient/strip)
 
-项目源码供上：<a href="https://github.com/TBoyLi/Rxjava2RetrofitTMvp"> Rxjava2RetrofitTMvp </a>
+简书供上：<a href="https://www.jianshu.com/p/8a9f2f9d4bb2"> Rxjava2RetrofitTMvp </a>
 
 至于为什么要优化呢。主要是因为如下：
 ***
