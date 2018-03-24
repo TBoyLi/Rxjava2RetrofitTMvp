@@ -42,8 +42,8 @@ public ProgressSubscriber(SubscriberOnNextListener mSubscriberOnNextListener, Co
 第三、Retrofit 加入了拦截器（包括头，请求体，返回数据）和cookie机制，拦截器方便调试中查阅网络请求的问题，至于cookie机制就不用多说了，无非就是解决用户重复登录而已。具体参考<a href="https://github.com/TBoyLi/Rxjava2RetrofitTMvp/blob/master/app/src/main/java/com/redli/rxjava2retrofittmvp/http/rxjava/HeaderInterceptor.java">HeaderInterceptor 头部拦截器</a>  <a href="https://github.com/TBoyLi/Rxjava2RetrofitTMvp/blob/master/app/src/main/java/com/redli/rxjava2retrofittmvp/http/rxjava/LoggerInterceptor.java">LoggerInterceptor 请求拦截器</a>
 请看 
 ```
-03-22 20:50:48.070 19620-19620/com.redli.rxjava2retrofittmvp D/ProgressSubscriber: onSubscribe: 
-03-22 20:50:50.157 19620-10787/com.redli.rxjava2retrofittmvp V/LoggerInterceptor: POST
+D/ProgressSubscriber: onSubscribe: 
+V/LoggerInterceptor: POST
                                                                                   https://api.douban.com/v2/movie/top250
                                                                                   count=10
                                                                                   start=1
@@ -157,8 +157,8 @@ public ProgressSubscriber(SubscriberOnNextListener mSubscriberOnNextListener, Co
                                                                                   				},
                                                                                   				 {
                                                                                   					"alt": "https:\/\/movie.douban
-03-22 20:50:50.206 19620-19620/com.redli.rxjava2retrofittmvp D/ProgressSubscriber: onNext: 
-03-22 20:50:50.206 19620-19620/com.redli.rxjava2retrofittmvp D/ProgressSubscriber: onComplete: 
+D/ProgressSubscriber: onNext: 
+D/ProgressSubscriber: onComplete: 
 ```
 是不是很方便，这是请求成功，至于错误信息也来张截图，但是这不是ProgressSubscriber 截断出来的。待会介绍
 
