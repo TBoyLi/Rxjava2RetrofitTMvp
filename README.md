@@ -292,6 +292,7 @@ public enum ApiException {
 
 ***
 小编来赚个辛苦钱，Thanks
-![微信收钱.jpeg](https://upload-images.jianshu.io/upload_images/1780580-423abe0ce9273225.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)  ![支付宝收钱.jpeg](https://upload-images.jianshu.io/upload_images/1780580-8452843cd91fffc1.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)
+![微信收钱.jpeg](https://upload-images.jianshu.io/upload_images/1780580-a18ac55ac86f99ca.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)  ![支付宝收钱.jpeg](https://upload-images.jianshu.io/upload_images/1780580-e2b288cca5163eb1.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)
+
 
 
