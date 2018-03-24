@@ -4,8 +4,8 @@ Rxjava2 Retrofit 简单封装 自定义拦截器，中断请求等
 这篇文章主要是针对前一篇文章（<a href="https://www.jianshu.com/p/50a33f56cb64">Android TMvp+RxJava+Retrofit 封装</a>）的优化和升级
 
 OK 、 老规矩直接上图，看着图来说话
-![总览.gif](https://upload-images.jianshu.io/upload_images/1780580-dbdecb32420d93aa.gif?imageMogr2/auto-orient/strip)
-![中断请求.gif](https://upload-images.jianshu.io/upload_images/1780580-0510c815ee9029e1.gif?imageMogr2/auto-orient/strip)
+
+![总览.gif](https://upload-images.jianshu.io/upload_images/1780580-dbdecb32420d93aa.gif?imageMogr2/auto-orient/strip)![中断请求.gif](https://upload-images.jianshu.io/upload_images/1780580-0510c815ee9029e1.gif?imageMogr2/auto-orient/strip)
 
 项目源码供上：<a href="https://github.com/TBoyLi/Rxjava2RetrofitTMvp"> Rxjava2RetrofitTMvp </a>
 
