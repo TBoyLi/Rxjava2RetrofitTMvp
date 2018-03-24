@@ -285,7 +285,9 @@ public enum ApiException {
 
 ```
 ***
-第五的话就是Rxjava 和 Retrofi 的版本升级和去除<a href="https://www.jianshu.com/p/50a33f56cb64">第一篇文章</a> 本地存储机制，使 Rxjava + Retrofi + Mvp 更加简洁和更好的拓展
+第五、model多接口的回调，不用每次都请求都在new一个model
+***
+第六的话就是Rxjava 和 Retrofi 的版本升级和去除<a href="https://www.jianshu.com/p/50a33f56cb64">第一篇文章</a> 本地存储机制，使 Rxjava + Retrofi + Mvp 更加简洁和更好的拓展
 
 ***
 最后呢祝大家新年新气象，财运滚滚，欢迎start 和 issue
