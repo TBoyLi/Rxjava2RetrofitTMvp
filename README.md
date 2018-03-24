@@ -44,119 +44,119 @@ public ProgressSubscriber(SubscriberOnNextListener mSubscriberOnNextListener, Co
 ```
 D/ProgressSubscriber: onSubscribe: 
 V/LoggerInterceptor: POST
-                                                                                  https://api.douban.com/v2/movie/top250
-                                                                                  count=10
-                                                                                  start=1
-                                                                                   消耗时间：2036.0609ms
-                                                                                  {
-                                                                                  	"count": 20,
-                                                                                  	 "start": 0,
-                                                                                  	 "total": 250,
-                                                                                  	 "subjects": [
-                                                                                  		{
-                                                                                  			"rating": {
-                                                                                  				"max": 10,
-                                                                                  				 "average": 9.6,
-                                                                                  				 "stars": "50",
-                                                                                  				 "min": 0
-                                                                                  			},
-                                                                                  			 "genres": [
-                                                                                  				"\u72af\u7f6a",
-                                                                                  				 "\u5267\u60c5"
-                                                                                  			],
-                                                                                  			 "title": "\u8096\u7533\u514b\u7684\u6551\u8d4e",
-                                                                                  			 "casts": [
-                                                                                  				{
-                                                                                  					"alt": "https:\/\/movie.douban.com\/celebrity\/1054521\/",
-                                                                                  					 "avatars": {
-                                                                                  						"small": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p17525.jpg",
-                                                                                  						 "large": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p17525.jpg",
-                                                                                  						 "medium": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p17525.jpg"
-                                                                                  					},
-                                                                                  					 "name": "\u8482\u59c6\u00b7\u7f57\u5bbe\u65af",
-                                                                                  					 "id": "1054521"
-                                                                                  				},
-                                                                                  				 {
-                                                                                  					"alt": "https:\/\/movie.douban.com\/celebrity\/1054534\/",
-                                                                                  					 "avatars": {
-                                                                                  						"small": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p34642.jpg",
-                                                                                  						 "large": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p34642.jpg",
-                                                                                  						 "medium": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p34642.jpg"
-                                                                                  					},
-                                                                                  					 "name": "\u6469\u6839\u00b7\u5f17\u91cc\u66fc",
-                                                                                  					 "id": "1054534"
-                                                                                  				},
-                                                                                  				 {
-                                                                                  					"alt": "https:\/\/movie.douban.com\/celebrity\/1041179\/",
-                                                                                  					 "avatars": {
-                                                                                  						"small": "https://img1.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p5837.jpg",
-                                                                                  						 "large": "https://img1.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p5837.jpg",
-                                                                                  						 "medium": "https://img1.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p5837.jpg"
-                                                                                  					},
-                                                                                  					 "name": "\u9c8d\u52c3\u00b7\u5188\u987f",
-                                                                                  					 "id": "1041179"
-                                                                                  				}
-                                                                                  			],
-                                                                                  			 "collect_count": 1247012,
-                                                                                  			 "original_title": "The Shawshank Redemption",
-                                                                                  			 "subtype": "movie",
-                                                                                  			 "directors": [
-                                                                                  				{
-                                                                                  					"alt": "https:\/\/movie.douban.com\/celebrity\/1047973\/",
-                                                                                  					 "avatars": {
-                                                                                  						"small": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p230.jpg",
-                                                                                  						 "large": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p230.jpg",
-                                                                                  						 "medium": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p230.jpg"
-                                                                                  					},
-                                                                                  					 "name": "\u5f17\u5170\u514b\u00b7\u5fb7\u62c9\u90a6\u7279",
-                                                                                  					 "id": "1047973"
-                                                                                  				}
-                                                                                  			],
-                                                                                  			 "year": "1994",
-                                                                                  			 "images": {
-                                                                                  				"small": "https://img3.doubanio.com\/view\/photo\/s_ratio_poster\/public\/p480747492.jpg",
-                                                                                  				 "large": "https://img3.doubanio.com\/view\/photo\/s_ratio_poster\/public\/p480747492.jpg",
-                                                                                  				 "medium": "https://img3.doubanio.com\/view\/photo\/s_ratio_poster\/public\/p480747492.jpg"
-                                                                                  			},
-                                                                                  			 "alt": "https:\/\/movie.douban.com\/subject\/1292052\/",
-                                                                                  			 "id": "1292052"
-                                                                                  		},
-                                                                                  		 {
-                                                                                  			"rating": {
-                                                                                  				"max": 10,
-                                                                                  				 "average": 9.5,
-                                                                                  				 "stars": "50",
-                                                                                  				 "min": 0
-                                                                                  			},
-                                                                                  			 "genres": [
-                                                                                  				"\u5267\u60c5",
-                                                                                  				 "\u7231\u60c5",
-                                                                                  				 "\u540c\u6027"
-                                                                                  			],
-                                                                                  			 "title": "\u9738\u738b\u522b\u59ec",
-                                                                                  			 "casts": [
-                                                                                  				{
-                                                                                  					"alt": "https:\/\/movie.douban.com\/celebrity\/1003494\/",
-                                                                                  					 "avatars": {
-                                                                                  						"small": "https://img1.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p67.jpg",
-                                                                                  						 "large": "https://img1.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p67.jpg",
-                                                                                  						 "medium": "https://img1.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p67.jpg"
-                                                                                  					},
-                                                                                  					 "name": "\u5f20\u56fd\u8363",
-                                                                                  					 "id": "1003494"
-                                                                                  				},
-                                                                                  				 {
-                                                                                  					"alt": "https:\/\/movie.douban.com\/celebrity\/1050265\/",
-                                                                                  					 "avatars": {
-                                                                                  						"small": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p46345.jpg",
-                                                                                  						 "large": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p46345.jpg",
-                                                                                  						 "medium": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p46345.jpg"
-                                                                                  					},
-                                                                                  					 "name": "\u5f20\u4e30\u6bc5",
-                                                                                  					 "id": "1050265"
-                                                                                  				},
-                                                                                  				 {
-                                                                                  					"alt": "https:\/\/movie.douban
+                      https://api.douban.com/v2/movie/top250
+                      count=10
+                      start=1
+                      消耗时间：2036.0609ms
+                      {
+                       "count": 20,
+                        "start": 0,
+                        "total": 250,
+                        "subjects": [
+                        {
+                         "rating": {
+                          "max": 10,
+                           "average": 9.6,
+                           "stars": "50",
+                           "min": 0
+                         },
+                          "genres": [
+                          "\u72af\u7f6a",
+                           "\u5267\u60c5"
+                         ],
+                          "title": "\u8096\u7533\u514b\u7684\u6551\u8d4e",
+                          "casts": [
+                          {
+                           "alt": "https:\/\/movie.douban.com\/celebrity\/1054521\/",
+                           "avatars": {
+                           "small": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p17525.jpg",
+                            "large": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p17525.jpg",
+                            "medium": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p17525.jpg"
+                          },
+                           "name": "\u8482\u59c6\u00b7\u7f57\u5bbe\u65af",
+                           "id": "1054521"
+                         },
+                          {
+                          "alt": "https:\/\/movie.douban.com\/celebrity\/1054534\/",
+                           "avatars": {
+                           "small": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p34642.jpg",
+                            "large": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p34642.jpg",
+                            "medium": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p34642.jpg"
+                          },
+                           "name": "\u6469\u6839\u00b7\u5f17\u91cc\u66fc",
+                           "id": "1054534"
+                         },
+                          {
+                          "alt": "https:\/\/movie.douban.com\/celebrity\/1041179\/",
+                           "avatars": {
+                           "small": "https://img1.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p5837.jpg",
+                            "large": "https://img1.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p5837.jpg",
+                            "medium": "https://img1.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p5837.jpg"
+                          },
+                           "name": "\u9c8d\u52c3\u00b7\u5188\u987f",
+                           "id": "1041179"
+                         }
+                        ],
+                         "collect_count": 1247012,
+                         "original_title": "The Shawshank Redemption",
+                         "subtype": "movie",
+                         "directors": [
+                         {
+                          "alt": "https:\/\/movie.douban.com\/celebrity\/1047973\/",
+                           "avatars": {
+                          "small": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p230.jpg",
+                           "large": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p230.jpg",
+                           "medium": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p230.jpg"
+                         },
+                          "name": "\u5f17\u5170\u514b\u00b7\u5fb7\u62c9\u90a6\u7279",
+                          "id": "1047973"
+                        }
+                       ],
+                        "year": "1994",
+                        "images": {
+                        "small": "https://img3.doubanio.com\/view\/photo\/s_ratio_poster\/public\/p480747492.jpg",
+                         "large": "https://img3.doubanio.com\/view\/photo\/s_ratio_poster\/public\/p480747492.jpg",
+                         "medium": "https://img3.doubanio.com\/view\/photo\/s_ratio_poster\/public\/p480747492.jpg"
+                         },
+                          "alt": "https:\/\/movie.douban.com\/subject\/1292052\/",
+                          "id": "1292052"
+                        },
+                         {
+                         "rating": {
+                          "max": 10,
+                           "average": 9.5,
+                           "stars": "50",
+                           "min": 0
+                         },
+                          "genres": [
+                          "\u5267\u60c5",
+                           "\u7231\u60c5",
+                           "\u540c\u6027"
+                         ],
+                          "title": "\u9738\u738b\u522b\u59ec",
+                          "casts": [
+                          {
+                           "alt": "https:\/\/movie.douban.com\/celebrity\/1003494\/",
+                            "avatars": {
+                            "small": "https://img1.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p67.jpg",
+                             "large": "https://img1.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p67.jpg",
+                             "medium": "https://img1.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p67.jpg"
+                           },
+                            "name": "\u5f20\u56fd\u8363",
+                            "id": "1003494"
+                          },
+                          {
+                          "alt": "https:\/\/movie.douban.com\/celebrity\/1050265\/",
+                           "avatars": {
+                           "small": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p46345.jpg",
+                            "large": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p46345.jpg",
+                            "medium": "https://img3.doubanio.com\/view\/celebrity\/s_ratio_celebrity\/public\/p46345.jpg"
+                          },
+                           "name": "\u5f20\u4e30\u6bc5",
+                           "id": "1050265"
+                         },
+                          {
+                          "alt": "https:\/\/movie.douban
 D/ProgressSubscriber: onNext: 
 D/ProgressSubscriber: onComplete: 
 ```
@@ -292,6 +292,6 @@ public enum ApiException {
 
 ***
 小编来赚个辛苦钱，Thanks
-![微信收钱.jpeg](https://upload-images.jianshu.io/upload_images/1780580-423abe0ce9273225.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)![支付宝收钱.jpeg](https://upload-images.jianshu.io/upload_images/1780580-8452843cd91fffc1.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)
+![微信收钱.jpeg](https://upload-images.jianshu.io/upload_images/1780580-423abe0ce9273225.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)  ![支付宝收钱.jpeg](https://upload-images.jianshu.io/upload_images/1780580-8452843cd91fffc1.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)
 
 
