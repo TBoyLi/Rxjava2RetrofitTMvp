@@ -28,8 +28,9 @@ public class ApiClient {
      * 请求超时时间
      */
     private static final int DEFAULT_TIMEOUT = 5;
+    private static String BASE_URL = "No Http Url";
 
-    public static ApiService getInstance(Context context){
+    public static ApiService getInstance(Context context) {
         if (SERVICE == null) {
 
             /**
@@ -37,8 +38,9 @@ public class ApiClient {
              */
             OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
             httpClientBuilder
-                    .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
-//                    .cookieJar(new CookieManger(context));
+                    .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
+                    .readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
+//                    .cookieJar(new CookieManger(context));//添加cookie
 
 
             if (BuildConfig.DEBUG) {
@@ -47,6 +49,9 @@ public class ApiClient {
                  */
                 LoggerInterceptor loggerInterceptor = new LoggerInterceptor();
                 httpClientBuilder.addInterceptor(loggerInterceptor);
+                BASE_URL = UrlConfig.BASE_URL_DEBUG;
+            } else {
+                BASE_URL = UrlConfig.BASE_URL_RELEASE;
             }
 
             /**
@@ -69,7 +74,7 @@ public class ApiClient {
                     .client(httpClientBuilder.build())
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .baseUrl(UrlConfig.BASE_URL)
+                    .baseUrl(BASE_URL)
                     .build().create(ApiService.class);
 
         }

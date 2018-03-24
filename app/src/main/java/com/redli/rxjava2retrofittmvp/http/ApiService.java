@@ -1,16 +1,15 @@
 package com.redli.rxjava2retrofittmvp.http;
 
 
-import com.redli.rxjava2retrofittmvp.bean.HttpResult;
+import com.redli.rxjava2retrofittmvp.base.BaseResponse;
 import com.redli.rxjava2retrofittmvp.bean.Subject;
 
 import java.util.List;
+import java.util.Map;
 
 import io.reactivex.Observable;
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.Query;
+import retrofit2.http.POST;
+import retrofit2.http.QueryMap;
 
 /**
  * The interface Api service.
@@ -25,15 +24,9 @@ public interface ApiService {
 
     /**
      * Gets top movie.
-     *
-     * @param start the start
-     * @param count the count
+     * @param params
      * @return the top movie
      */
-    @GET("top250")
-    Observable<HttpResult<List<Subject>>> getTopMovie(@Query("start") int start, @Query("count")
-            int count);
-
-    @GET("top250")
-    Call<ResponseBody> getTopMovieCall(@Query("start") int start, @Query("count") int count);
+    @POST("top250")
+    Observable<BaseResponse<List<Subject>>> getTopMovies(@QueryMap Map<String, String> params);
 }

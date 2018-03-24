@@ -3,33 +3,34 @@ package com.redli.rxjava2retrofittmvp.http.rxjava;
 import android.content.Context;
 import android.net.ParseException;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.gson.JsonParseException;
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
-import com.redli.rxjava2retrofittmvp.bean.HttpResult;
+import com.redli.rxjava2retrofittmvp.R;
+import com.redli.rxjava2retrofittmvp.base.BaseResponse;
 
 import org.json.JSONException;
 
 import java.io.InterruptedIOException;
 import java.net.ConnectException;
+import java.net.SocketException;
 import java.net.UnknownHostException;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
-import static com.redli.rxjava2retrofittmvp.http.rxjava.ApiException.Exception.BAD_NETWORK;
-import static com.redli.rxjava2retrofittmvp.http.rxjava.ApiException.Exception.CONNECT_ERROR;
-import static com.redli.rxjava2retrofittmvp.http.rxjava.ApiException.Exception.CONNECT_TIMEOUT;
-import static com.redli.rxjava2retrofittmvp.http.rxjava.ApiException.Exception.PARSE_ERROR;
-import static com.redli.rxjava2retrofittmvp.http.rxjava.ApiException.Exception.UNKNOWN_ERROR;
+import static com.redli.rxjava2retrofittmvp.http.rxjava.ApiException.BAD_NETWORK;
+import static com.redli.rxjava2retrofittmvp.http.rxjava.ApiException.CONNECT_ERROR;
+import static com.redli.rxjava2retrofittmvp.http.rxjava.ApiException.CONNECT_TIMEOUT;
+import static com.redli.rxjava2retrofittmvp.http.rxjava.ApiException.PARSE_ERROR;
+import static com.redli.rxjava2retrofittmvp.http.rxjava.ApiException.UNKNOWN_ERROR;
 
 /**
  * @author RedLi
  * @date 2018/3/21
  */
 
-public class ProgressSubscriber<T extends HttpResult> implements
+public class ProgressSubscriber<T extends BaseResponse> implements
         ProgressCancelListener, Observer<T> {
 
     private static final String TAG = ProgressSubscriber.class.getSimpleName();
@@ -38,13 +39,14 @@ public class ProgressSubscriber<T extends HttpResult> implements
     private ProgressDialogHandler mProgressDialogHandler;
 
     private Context context;
-
+    private boolean isShowLoading;
     private Disposable disposable;
 
-    public ProgressSubscriber(SubscriberOnNextListener mSubscriberOnNextListener, Context context) {
+    public ProgressSubscriber(SubscriberOnNextListener mSubscriberOnNextListener, Context context, boolean isShowLoading) {
         this.mSubscriberOnNextListener = mSubscriberOnNextListener;
         this.context = context;
-        mProgressDialogHandler = new ProgressDialogHandler(context, this, true);
+        this.isShowLoading = isShowLoading;
+        this.mProgressDialogHandler = new ProgressDialogHandler(context, this, true);
     }
 
     private void showProgressDialog() {
@@ -66,41 +68,47 @@ public class ProgressSubscriber<T extends HttpResult> implements
     public void onSubscribe(Disposable s) {
         Log.d(TAG, "onSubscribe: ");
         this.disposable = s;
-        showProgressDialog();
+        if (isShowLoading) {
+            showProgressDialog();
+        }
     }
 
     @Override
     public void onNext(T t) {
         Log.d(TAG, "onNext: ");
-        mSubscriberOnNextListener.onNext(t.getSubjects());
-//        if (t.isSuccess() && mSubscriberOnNextListener != null) {
-//            mSubscriberOnNextListener.onNext(t);
-//        } else {
-//            onFail(t);
-//        }
+        /**
+         * 这里的话是通过success 或者 code 来判断 可惜豆辫放回数据没有这个字段 就只能通多count来判断了
+         */
+        if (t.getCount() > 0 && mSubscriberOnNextListener != null) {
+            mSubscriberOnNextListener.onNext(t.getSubjects());
+        } else {
+            onFail(t);
+        }
     }
 
     @Override
     public void onError(Throwable e) {
         Log.e("onError", e.getMessage());
         dismissProgressDialog();
-        if (e instanceof HttpException) {
+        if (e instanceof SocketException) {
+            onException(context, CONNECT_ERROR);
+        } else if (e instanceof HttpException) {
             //   HTTP错误
-            ApiException.onException(context, BAD_NETWORK);
+            onException(context, BAD_NETWORK);
         } else if (e instanceof ConnectException
                 || e instanceof UnknownHostException) {
             //   连接错误
-            ApiException.onException(context, CONNECT_ERROR);
+            onException(context, CONNECT_ERROR);
         } else if (e instanceof InterruptedIOException) {
             //  连接超时
-            ApiException.onException(context, CONNECT_TIMEOUT);
+            onException(context, CONNECT_TIMEOUT);
         } else if (e instanceof JsonParseException
                 || e instanceof JSONException
                 || e instanceof ParseException) {
             //  解析错误
-            ApiException.onException(context, PARSE_ERROR);
+            onException(context, PARSE_ERROR);
         } else {
-            ApiException.onException(context, UNKNOWN_ERROR);
+            onException(context, UNKNOWN_ERROR);
         }
     }
 
@@ -127,14 +135,40 @@ public class ProgressSubscriber<T extends HttpResult> implements
 
     private void onFail(T response) {
 //        String message = response.getMessage();
-//        if (TextUtils.isEmpty(message)) {
-//            tips(context.getString(R.string.response_return_error));
-//        } else {
-//            tips(message);
+        if (response.getCount() == 0 && mSubscriberOnNextListener != null) {
+//            mSubscriberOnNextListener.onFail(context.getString(R.string.response_return_error));
+            mSubscriberOnNextListener.onFail("暂无数据");
+        }
+//        else {
+//            mSubscriberOnNextListener.onFail(message);
 //        }
     }
 
-    private void tips(String msg) {
-        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+
+    /**
+     * 请求异常
+     *
+     * @param reason
+     */
+    private void onException(Context context, ApiException reason) {
+
+        switch (reason) {
+            case CONNECT_ERROR:
+                mSubscriberOnNextListener.onFail(context.getString(R.string.connect_error));
+                break;
+            case CONNECT_TIMEOUT:
+                mSubscriberOnNextListener.onFail(context.getString(R.string.connect_timeout));
+                break;
+            case BAD_NETWORK:
+                mSubscriberOnNextListener.onFail(context.getString(R.string.bad_network));
+                break;
+            case PARSE_ERROR:
+                mSubscriberOnNextListener.onFail(context.getString(R.string.parse_error));
+                break;
+            case UNKNOWN_ERROR:
+            default:
+                mSubscriberOnNextListener.onFail(context.getString(R.string.unknown_error));
+                break;
+        }
     }
 }

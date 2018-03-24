@@ -25,9 +25,14 @@ public class UrlConfig {
      */
 
     /**
-     * 请求地址
+     * 测试服务器
      */
-    public static final String BASE_URL = "https://api.douban.com/v2/movie/";
+    public static final String BASE_URL_DEBUG = "https://api.douban.com/v2/movie/";
+
+    /**
+     * 正式服务器
+     */
+    public static final String BASE_URL_RELEASE = "https://api.douban.com/v2/movie/";
 
 }
 

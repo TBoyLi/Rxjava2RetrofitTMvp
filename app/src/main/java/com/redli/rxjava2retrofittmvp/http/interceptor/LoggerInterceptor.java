@@ -43,7 +43,7 @@ public class LoggerInterceptor implements Interceptor {
         if(request.body() instanceof FormBody){
             FormBody postParams = ((FormBody) request.body());
             if (postParams != null) {
-                sb.append("请求信息:").append("\n");
+                sb.append(" ").append("\n");
                 int size = postParams.size();
                 for (int i = 0; i < size; i++) {
                     sb.append(postParams.encodedName(i) + "=" + java.net.URLDecoder.decode(postParams.encodedValue(i), "utf-8")).append("\n");
@@ -53,7 +53,7 @@ public class LoggerInterceptor implements Interceptor {
 
         okhttp3.MediaType mediaType = response.body().contentType();
         String content = response.body().string();
-        Log.v(TAG, String.format(Locale.getDefault(), "%s 消耗时间：%.4fms%n%s " + "\n" + "返回信息：", sb.toString(), (t2 - t1) / 1e6d, format(content)));
+        Log.v(TAG, String.format(Locale.getDefault(), "%s 消耗时间：%.4fms%n%s " + "\n" + " ", sb.toString(), (t2 - t1) / 1e6d, format(content)));
         return response.newBuilder()
                 .body(okhttp3.ResponseBody.create(mediaType, content))
                 .build();

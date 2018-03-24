@@ -3,55 +3,62 @@ package com.redli.rxjava2retrofittmvp.base;
 /**
  * @author RedLi
  * @date 2018/3/20
- * <p>
  * 根据Json数据格式构建返回数据类
  */
 
 public class BaseResponse<T> {
 
     /**
-     * {
-     * "resultCode": 0,
-     * "resultMessage": "成功",
-     * "data": {}
-     * }
+     * 这里是根据豆辫放回的数据封装的
+     * 数据一般为
+     * boolean success;
+     * String message;
+     * int total;
+     * T data; {} or [{}] 数据
+     * 可根据自己的需求来封装
      */
 
+    /**
+     * count : 10
+     * start : 0
+     * total : 250
+     * subjects: {} or [{}] 数据
+     */
 
-    private int code;
-    private boolean success;
-    private String message;
-    private T data;
+    private int count;
+    private int start;
+    private int total;
+    private T subjects;
 
-    public int getCode() {
-        return code;
+    public int getCount() {
+        return count;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setCount(int count) {
+        this.count = count;
     }
 
-    public boolean isSuccess() {
-        return success;
+    public int getStart() {
+        return start;
     }
 
-    public void setSuccess(boolean success) {
-        this.success = success;
+    public void setStart(int start) {
+        this.start = start;
     }
 
-    public String getMessage() {
-        return message;
+    public int getTotal() {
+        return total;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setTotal(int total) {
+        this.total = total;
     }
 
-    public T getData() {
-        return data;
+    public T getSubjects() {
+        return subjects;
     }
 
-    public void setData(T data) {
-        this.data = data;
+    public void setSubjects(T subjects) {
+        this.subjects = subjects;
     }
 }

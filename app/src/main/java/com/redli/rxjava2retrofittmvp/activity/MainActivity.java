@@ -1,5 +1,6 @@
 package com.redli.rxjava2retrofittmvp.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -34,33 +35,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        subscriberOnNextListener = new SubscriberOnNextListener<List<Subject>>() {
-            @Override
-            public void onNext(List<Subject> subjects) {
-
-                StringBuffer stringBuffer = new StringBuffer();
-
-                for (Subject subject: subjects) {
-                    stringBuffer.append(subject.toString() + "\n");
-                }
-
-                text.setText(stringBuffer.toString());
-            }
-        };
-
     }
 
     @OnClick(R.id.button)
     public void onViewClicked() {
-        Observable<HttpResult<List<Subject>>> observable = ApiClient.getInstance(this)
-                .getTopMovie(0, 10);
-//                .map(new Function<HttpResult<List<Subject>>, List<Subject>>() {
-//                    @Override
-//                    public List<Subject> apply(HttpResult<List<Subject>> listHttpResult) throws
-//                            Exception {
-//                        return listHttpResult.getSubjects();
-//                    }
-//                });
-        SubscribeHandler.observeOn(observable, new ProgressSubscriber(subscriberOnNextListener, this));
+        startActivity(new Intent(this, TopMoviesActivity.class));
     }
 }

@@ -19,14 +19,6 @@ public class Subject {
     private List<Cast> directors;
     private Avatars images;
 
-    @Override
-    public String toString() {
-        return "Subject.id=" + id
-                + " Subject.title=" + title
-                + " Subject.year=" + year
-                + " Subject.originalTitle=" + original_title + casts.toString() + directors.toString() + " | ";
-    }
-
     public String getId() {
         return id;
     }
@@ -99,7 +91,7 @@ public class Subject {
         this.images = images;
     }
 
-    private class Cast{
+    public class Cast{
         private String id;
         private String name;
         private String alt;
@@ -143,7 +135,7 @@ public class Subject {
         }
     }
 
-    private class Avatars{
+    public class Avatars{
         private String small;
         private String medium;
         private String large;

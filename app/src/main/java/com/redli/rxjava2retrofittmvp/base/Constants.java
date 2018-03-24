@@ -6,4 +6,5 @@ package com.redli.rxjava2retrofittmvp.base;
  */
 
 public class Constants {
+
 }
